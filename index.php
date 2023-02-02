@@ -24,22 +24,22 @@
                 <h1 class="text-center style-h1 p-4">Todo List</h1>
                 <div class="row">
                     <div class="col-12">
-                        <ul class="list-unstyled">
-                            <li></li>
+                        <ul class="list-unstyled w-50">
+                            <li class="p-2 border-grey text-white" v-for="todo in todoList">
+                                {{ todo.name }}
+                            </li>
                         </ul>
                     </div>
                     <div class="col-12 d-flex justify-content-center">
                         <div class="input-group mb-3 w-50">
-                            <input type="text" class="form-control" aria-describedby="button-addon2">
-                            <button class="btn btn-outline-warning" type="button" id="button-addon2">Button</button>
+                            <input type="text" class="form-control" aria-describedby="button-addon2" v-model="name">
+                            <button class="btn btn-outline-warning" type="button" id="button-addon2" @click="addTodo">Inserisci</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <!-- CDN VUEJS -->
-        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-        <script src="./js/script.js"></script>
     </body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="script.js"></script>
 </html>
