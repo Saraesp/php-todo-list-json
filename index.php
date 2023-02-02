@@ -15,6 +15,10 @@
         
         <!-- style css -->
         <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,700&family=Montserrat:wght@200;300;400&family=PT+Sans&family=Roboto:wght@400;500&family=Sofia+Sans+Condensed:wght@600&display=swap" rel="stylesheet"> 
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
         
         <link rel="stylesheet" href="./css/style.css">
     </head>
@@ -22,16 +26,23 @@
         <div id="app">
             <div class="container">
                 <h1 class="text-center style-h1 p-4">Todo List</h1>
-                <div class="row">
+                <div class="row w-50 ">
                     <div class="col-12">
-                        <ul class="list-unstyled w-50">
-                            <li class="p-2 border-grey text-white" v-for="todo in todoList">
-                                {{ todo.name }}
+                        <ul class="list-unstyled">
+                            <li class="p-2 text-white border border-secondary" v-for="(todo, index) in todoList">
+                                <div class="d-flex justify-content-between align-items-center"> 
+                                    <div>{{ todo.name }}</div>
+                                    <div>
+                                        <button class="btn btn-danger" @click="deleteTodo(index)"><i class="fa fa-trash"></i></button>
+                                        <button class="btn btn-danger" @click="editTodo(index)"><i class="fa fa-trash"></i></button>
+                                    </div>
+                                </div>
+                                
                             </li>
                         </ul>
                     </div>
-                    <div class="col-12 d-flex justify-content-center">
-                        <div class="input-group mb-3 w-50">
+                    <div class="col-12">
+                        <div class="input-group mb-3">
                             <input type="text" class="form-control" aria-describedby="button-addon2" v-model="name">
                             <button class="btn btn-outline-warning" type="button" id="button-addon2" @click="addTodo">Inserisci</button>
                         </div>
