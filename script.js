@@ -5,7 +5,8 @@ createApp({
         return{
             apiUrl: 'server.php',
             todoList: [],
-            name: ''
+            name: '',
+            clicked: ''
         }
     },
     methods: {
@@ -29,13 +30,31 @@ createApp({
 
             axios.post(this.apiUrl, data, {
                 headers:{ 'Content-Type': 'multipart/form-data' }
-            }).then((response) => 
+            }).then((response) => {
                     this.todoList = response.data
-            )
+        })
+        },
+        editTodo(index){
+            this.clicked =  index;      
+
+        },
+        confirmUpdate(string, index){
+            const data = {
+                edit: index,
+                new_name: string
+            }
+    
+            axios.post(this.apiUrl, data, {
+                headers:{ 'Content-Type': 'multipart/form-data' }
+            }).then((response) => {
+                this.todoList = response.data
+                this.clicked = ''
+            
+            })
         }
     },
     mounted() {
-        axios.get(this.apiUrl).then((response) =>{
+        axios.get(this.apiUrl).then((response) => {
             this.todoList = response.data;
         });
     }

@@ -1,22 +1,23 @@
-[
-    {
-        "name": "HTML",
-        "done": false
-    },
-    {
-        "name": "CSS",
-        "done": false
-    },
-    {
+{
+    "2": {
         "name": "Responsive design",
         "done": false
     },
-    {
+    "3": {
         "name": "Javascript",
         "done": false
     },
-    {
+    "4": {
         "name": "PHP",
         "done": false
+    },
+    "5": {
+        "name": "CSS"
+    },
+    "6": {
+        "name": "Vuejs"
+    },
+    "7": {
+        "name": "Laravel"
     }
-]
+}
