@@ -12,7 +12,8 @@ createApp({
     methods: {
         addTodo() {
             const data = {
-                name: this.name
+                name: this.name,
+                done: false
             }
 
             axios.post(this.apiUrl, data, {

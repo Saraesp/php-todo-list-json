@@ -3,10 +3,11 @@
 function addTodo($list_todo, $name){
 
     $todo_item = $_POST['name'];
+    $done = $_POST['done'];
 
     $todo_array = [
         "name" => $todo_item,
-        "done" => false,
+        "done" => $done,
     ];
 
     $list_todo[] = $_POST;

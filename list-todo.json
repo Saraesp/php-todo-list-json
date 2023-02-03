@@ -12,12 +12,7 @@
         "done": false
     },
     "5": {
-        "name": "CSS"
-    },
-    "6": {
-        "name": "Vuejs"
-    },
-    "7": {
-        "name": "Laravel"
+        "name": "CSS",
+        "done": "false"
     }
 }
